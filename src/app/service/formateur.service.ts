@@ -15,7 +15,7 @@ export class FormateurService {
   constructor(private _http: HttpClient) {
     this.header = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + btoa('aurore13:1313')
+      'Authorization': 'Basic ' + btoa('toto:toto')
     });
   }
 
@@ -60,8 +60,18 @@ export class FormateurService {
   }
 
   public create(formateur: Formateur): Observable<any> {
+    const a = {
+      numero: formateur.adresse.numero,
+      rue: formateur.adresse.rue,
+      codePostal: formateur.adresse.codePostal,
+      ville: formateur.adresse.ville
+    };
     const f = {
-      nom: formateur.nom
+      nom: formateur.nom,
+      prenom: formateur.prenom,
+      mail: formateur.mail,
+      telephone: formateur.telephone,
+      adresse: a
     };
     return this.http.post(this.url, f, {headers: this.header});
   }
