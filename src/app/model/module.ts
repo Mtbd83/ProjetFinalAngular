@@ -3,18 +3,18 @@ import {Formateur} from '../model/formateur';
 import {Matiere} from '../model/matiere';
 export class Module {
 
-  constructor(private _id?: number, private _dateDebut?: Date, private _dateFin?: Date,
+  constructor(private _idModule?: number, private _dateDebut?: Date, private _dateFin?: Date,
               private _formateur?: Formateur, private _planning?: Planning, private _matiere?: Matiere) {
 
   }
 
 
-  get id(): number {
-    return this._id;
+  get idModule(): number {
+    return this._idModule;
   }
 
-  set id(value: number) {
-    this._id = value;
+  set idModule(value: number) {
+    this._idModule = value;
   }
 
   get dateDebut(): Date {
