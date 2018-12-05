@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PlanningService} from '../service/planning.service';
+import {Planning} from '../model/planning';
 
 @Component({
   selector: 'app-planning',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanningComponent implements OnInit {
 
-  constructor() { }
+  private _planning: Array<Planning>;
+
+  constructor(private _planningService: PlanningService) { }
 
   ngOnInit() {
+    this.list();
   }
 
+
+  public list() {
+    this._planningService.list().subscribe(resultat => {
+      this._planning = resultat;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+
+  get planning(): Array<Planning> {
+    return this._planning;
+  }
+
+  set planning(value: Array<Planning>) {
+    this._planning = value;
+  }
+
+  get planningService(): PlanningService {
+    return this._planningService;
+  }
+
+  set planningService(value: PlanningService) {
+    this._planningService = value;
+  }
 }
