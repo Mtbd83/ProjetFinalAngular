@@ -12,7 +12,7 @@ import {PlanningService} from './service/planning.service';
 import {FormateurService} from './service/formateur.service';
 import {ModuleService} from './service/module.service';
 import {FormateurComponent} from './formateur/formateur.component';
-import { EditPlanningComponent } from './edit-planning/edit-planning.component';
+import { EditFormateurComponent } from './edit-formateur/edit-formateur.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { EditPlanningComponent } from './edit-planning/edit-planning.component';
     PlanningComponent,
     HomeComponent,
     FormateurComponent,
-    EditPlanningComponent
+    EditFormateurComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule
