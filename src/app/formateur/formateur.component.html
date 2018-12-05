@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table" style="text-align: center">
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Mail</th>
+      <th>Téléphone</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let f of listeFormateurs;index as i">
+      <td>{{ f.id }}</td>
+      <td>{{ f.nom }}</td>
+      <td>{{ f.prenom }}</td>
+      <td>{{ f.mail }}</td>
+      <td>{{ f.telephone }}</td>
+      <td><button class="btn btn-primary" [routerLink]="['/formateur','edit',f.id]">Editer</button></td>
+      <td><button class="btn btn-danger" (click)="supp(f.ido)">Supprimer</button></td>
+    </tr>
+  </table>
+  <br/>
+  <a [routerLink]="['/formateur','edit']" class="btn btn-dark">Ajouter une salle</a>
+</div>
