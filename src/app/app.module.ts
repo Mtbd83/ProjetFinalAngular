@@ -5,14 +5,18 @@ import { AppComponent } from './app.component';
 import { PlanningComponent } from './planning/planning.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {RouterModule} from '@angular/router';
-import {routes} from './routes';
 import { HomeComponent } from './home/home.component';
 import {PlanningService} from './service/planning.service';
 import {FormateurService} from './service/formateur.service';
 import {ModuleService} from './service/module.service';
 import {FormateurComponent} from './formateur/formateur.component';
-import { EditFormateurComponent } from './edit-formateur/edit-formateur.component';
+import { EditPlanningComponent } from './edit-planning/edit-planning.component';
+import {RouterModule} from '@angular/router';
+import {routes} from './routes';
+import { ModuleComponent } from './module/module.component';
+import { EditModuleComponent } from './edit-module/edit-module.component';
+import {EditFormateurComponent} from './edit-formateur/edit-formateur.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +24,9 @@ import { EditFormateurComponent } from './edit-formateur/edit-formateur.componen
     PlanningComponent,
     HomeComponent,
     FormateurComponent,
+    EditPlanningComponent,
+    ModuleComponent,
+    EditModuleComponent,
     EditFormateurComponent
   ],
   imports: [

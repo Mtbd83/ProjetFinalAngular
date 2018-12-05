@@ -1,0 +1,15 @@
+<div class="container">
+  <form (ngSubmit)="save()">
+    <label for="id">Id Module</label>
+    <input type="text" class="form-control" [(ngModel)]="module.idModule" name="id" id="id" placeholder="renseigner automatiquement"> <br/>
+
+    <label for="datedebut">Date Debut </label>
+    <input type="date"  class="form-control"  [(ngModel)]="module.dateDebut"  name="datedebut"  id="datedebut" required> <br/>
+
+    <label for="datefin">Date Fin </label>
+    <input type="date"  class="form-control"  [(ngModel)]="module.dateFin"  name="datefin"  id="datefin" required> <br/>
+
+    <button  class="btn btn-success" type="submit" >Save</button>
+    <a  class="btn btn-info" [routerLink]="['/module']">Retour</a>
+  </form>
+</div>

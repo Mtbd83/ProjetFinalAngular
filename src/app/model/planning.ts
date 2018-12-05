@@ -6,7 +6,7 @@ import {Module} from './module';
 export class Planning {
 
   constructor(private _idPlanning?: number, private _dateDebut?: Date, private _dateFin?: Date, private _salle?: Salle,
-              private _gestionnaire?: Gestionnaire, private _videoprojecteur?: Videoprojecteur, private _modules?: Array<Module>) {
+              private _gestionnaire?: Gestionnaire, private _videoProj?: Videoprojecteur, private _modules?: Array<Module>) {
 
   }
 
@@ -27,12 +27,13 @@ export class Planning {
     this._gestionnaire = value;
   }
 
-  get videoprojecteur(): Videoprojecteur {
-    return this._videoprojecteur;
+
+  get videoProj(): Videoprojecteur {
+    return this._videoProj;
   }
 
-  set videoprojecteur(value: Videoprojecteur) {
-    this._videoprojecteur = value;
+  set videoProj(value: Videoprojecteur) {
+    this._videoProj = value;
   }
 
   get modules(): Array<Module> {

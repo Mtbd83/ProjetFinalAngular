@@ -32,12 +32,12 @@ export class PlanningService {
 
   public create(planning: Planning) {
     const plan = {
-      datedebut: planning.dateDebut,
+      dateDebut: planning.dateDebut,
       datefin: planning.dateFin,
       salle: planning.salle,
       modules: planning.modules,
       gestionnaire: planning.gestionnaire,
-      videoprojecteur: planning.videoprojecteur
+      videoprojecteur: planning.videoProj
     };
     return this.http.post<Planning>(this.url, plan, {headers: this.header});
   }

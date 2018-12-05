@@ -26,6 +26,14 @@ export class PlanningComponent implements OnInit {
     });
   }
 
+  public deletePlanning(id: number){
+    this._planningService.delete(id).subscribe(resultat => {
+      this.list();
+    }, error => {
+      console.log(error);
+    });
+  }
+
 
   get planning(): Array<Planning> {
     return this._planning;
