@@ -9,8 +9,9 @@ import {RouterModule} from '@angular/router';
 import {routes} from './routes';
 import { HomeComponent } from './home/home.component';
 import {PlanningService} from './service/planning.service';
-import { FormateurComponent } from './formateur/formateur.component';
 import {FormateurService} from './service/formateur.service';
+import { FormateurComponent } from './formateur/formateur.component';
+import {ModuleService} from './service/module.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {FormateurService} from './service/formateur.service';
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule
   ],
-  providers: [PlanningService, FormateurService],
+  providers: [PlanningService, FormateurService, ModuleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
