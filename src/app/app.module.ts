@@ -9,17 +9,20 @@ import {RouterModule} from '@angular/router';
 import {routes} from './routes';
 import { HomeComponent } from './home/home.component';
 import {PlanningService} from './service/planning.service';
+import { FormateurComponent } from './formateur/formateur.component';
+import {FormateurService} from './service/formateur.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanningComponent,
-    HomeComponent
+    HomeComponent,
+    FormateurComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule
   ],
-  providers: [PlanningService],
+  providers: [PlanningService, FormateurService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
