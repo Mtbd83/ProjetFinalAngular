@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class PlanningService {
 
-  private url = 'http://localhost:8080/formation/rest/formateur';
+  private url = 'http://localhost:8080/projet/rest/planning';
   private header: HttpHeaders;
 
   constructor(private http: HttpClient) {
@@ -18,7 +18,7 @@ export class PlanningService {
   });
   }
 
-  public list(): Observable<Planning[]>{
+  public list(): Observable<Planning[]> {
     return this.http.get<Planning[]>(this.url, {headers: this.header});
   }
 
@@ -30,10 +30,10 @@ export class PlanningService {
     return this.http.get<Planning>(this.url + '/' + id, {headers: this.header});
   }
 
-  public create(planning: Planning){
+  public create(planning: Planning) {
     const plan = {
-      datedebut: planning.datedebut,
-      datefin: planning.datefin,
+      datedebut: planning.dateDebut,
+      datefin: planning.dateFin,
       salle: planning.salle,
       modules: planning.modules,
       gestionnaire: planning.gestionnaire,

@@ -1,3 +1,33 @@
-<p>
-  planning works!
-</p>
+<div>
+  <h2>Liste des Planning : </h2>
+
+  <div class="container">
+    <table class="table">
+      <tr>
+        <th>Id</th>
+        <th>Date Debut</th>
+        <th>Date Fin</th>
+        <th>Gestionnaire</th>
+        <th>Module</th>
+        <th>VideoProj</th>
+        <th>Salle</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let p of planning; index as i">
+        <td>{{p.idPlanning}}</td>
+        <td>{{p.datedebut}}</td>
+        <td>{{p.datefin}}</td>
+        <td>{{p.gestionnaire}}</td>
+        <td >{{p.modules}}</td>
+        <td>{{p.videoprojecteur}}</td>
+        <td *ngIf="p.salle!=null">{{p.salle.nom}}</td>
+        <td *ngIf="p.salle==null">Pas de salle</td>
+
+      </tr>
+    </table>
+  </div>
+
+  <a [routerLink]="['/formateur','edit']" class="btn btn-success">Ajouter Nouveau Formateur</a>
+
+</div>

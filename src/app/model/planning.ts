@@ -5,7 +5,7 @@ import {Module} from './module';
 
 export class Planning {
 
-  constructor(private _id?: number, private _datedebut?: Date, private _datefin?: Date, private _salle?: Salle,
+  constructor(private _idPlanning?: number, private _dateDebut?: Date, private _dateFin?: Date, private _salle?: Salle,
               private _gestionnaire?: Gestionnaire, private _videoprojecteur?: Videoprojecteur, private _modules?: Array<Module>) {
 
   }
@@ -43,27 +43,28 @@ export class Planning {
     this._modules = value;
   }
 
-  get id(): number {
-    return this._id;
+
+  get idPlanning(): number {
+    return this._idPlanning;
   }
 
-  set id(value: number) {
-    this._id = value;
+  set idPlanning(value: number) {
+    this._idPlanning = value;
   }
 
-  get datedebut(): Date {
-    return this._datedebut;
+  get dateDebut(): Date {
+    return this._dateDebut;
   }
 
-  set datedebut(value: Date) {
-    this._datedebut = value;
+  set dateDebut(value: Date) {
+    this._dateDebut = value;
   }
 
-  get datefin(): Date {
-    return this._datefin;
+  get dateFin(): Date {
+    return this._dateFin;
   }
 
-  set datefin(value: Date) {
-    this._datefin = value;
+  set dateFin(value: Date) {
+    this._dateFin = value;
   }
 }

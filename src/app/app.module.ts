@@ -10,7 +10,7 @@ import {routes} from './routes';
 import { HomeComponent } from './home/home.component';
 import {PlanningService} from './service/planning.service';
 import {FormateurService} from './service/formateur.service';
-import { FormateurComponent } from './formateur/formateur.component';
+
 import {ModuleService} from './service/module.service';
 
 @NgModule({
@@ -18,7 +18,7 @@ import {ModuleService} from './service/module.service';
     AppComponent,
     PlanningComponent,
     HomeComponent,
-    FormateurComponent
+
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule
