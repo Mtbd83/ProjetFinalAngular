@@ -6,6 +6,8 @@ import {EditFormateurComponent} from './edit-formateur/edit-formateur.component'
 import {ModuleComponent} from './module/module.component';
 import {EditModuleComponent} from './edit-module/edit-module.component';
 import {EditPlanningComponent} from './edit-planning/edit-planning.component';
+import {MatiereComponent} from './matiere/matiere.component';
+import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
 
 
 export const routes: Routes = [
@@ -20,5 +22,8 @@ export const routes: Routes = [
   {path: 'module/edit/:idModule', component: EditModuleComponent},
   {path: 'planning', component: ModuleComponent},
   {path: 'planning/edit', component: EditPlanningComponent},
-  {path: 'planning/edit/:idModule', component:  EditPlanningComponent}
+  {path: 'planning/edit/:idModule', component:  EditPlanningComponent},
+  {path: 'matiere', component: MatiereComponent},
+  {path: 'matiere/edit', component: MatiereEditComponent},
+  {path: 'matiere/edit/:idMatiere', component: MatiereEditComponent}
 ];
