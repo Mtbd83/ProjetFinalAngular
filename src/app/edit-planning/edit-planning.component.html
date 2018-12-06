@@ -1,0 +1,21 @@
+<div class="container">
+  <form (ngSubmit)="save()">
+    <label for="id">Id Planning</label>
+    <input type="text" class="form-control" [(ngModel)]="planning.idPlanning" name="id" id="id" placeholder="renseigner automatiquement"> <br/>
+
+    <label for="datedebut">Date Debut </label>
+    <input type="date"  class="form-control"  [(ngModel)]="planning.dateDebut"  name="datedebut"  id="datedebut" required> <br/>
+
+    <label for="datefin">Date Fin </label>
+    <input type="date"  class="form-control"  [(ngModel)]="planning.dateFin"  name="datefin"  id="datefin" required> <br/>
+
+    <!--<label for="salles">Salles</label>-->
+    <!--<select name="salles"  id="salles" class="form-control" [(ngModel)]="planning.salle">-->
+      <!--<option [ngValue]="s" *ngFor="let s of salles">{{s.id}}</option>-->
+      <!--<option [ngValue]=null>Aucun Module</option>-->
+    <!--</select>-->
+
+    <button  class="btn btn-success" type="submit" >Save</button>
+    <a  class="btn btn-info" [routerLink]="['/planning']">Retour</a>
+    </form>
+</div>

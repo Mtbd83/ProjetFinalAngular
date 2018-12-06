@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Cout</th>
+      <th>Disponibilite</th>
+      <th>Capacite</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let s of listSalles">
+      <td>{{s.id}}</td>
+      <td>{{s.code}}</td>
+      <td>{{s.cout}}</td>
+      <td>{{s.disponibilite}}</td>
+      <td>{{s.capacite}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/materiel','salle','edit',s.id]">Editer</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(s.id)">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <a [routerLink]="['/materiel','salle','edit']" class="btn btn-dark">Ajouter une Salle</a>
+</div>

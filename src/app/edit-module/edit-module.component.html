@@ -1,0 +1,32 @@
+<div class="container">
+  <form (ngSubmit)="save()">
+    <label for="id">Id Module</label>
+    <input type="text" class="form-control" [(ngModel)]="module.idModule" name="id" id="id" placeholder="renseigner automatiquement"> <br/>
+
+    <label for="matiere">Matiere</label>
+    <select name="matiere"  id="matiere" class="form-control" [(ngModel)]="module.matiere">
+      <option [ngValue]="m" *ngFor="let m of matieres">{{m.titre}}</option>
+    </select><br/>
+
+    <span *ngIf="module.matiere!=null" type="number"  name="duree"  id="duree" disabled="disabled">Duree Matiere en Jour = {{module.matiere.duree}} </span>
+    <ng-template></ng-template>
+    <br/>
+    <br/>
+
+    <label for="formateur">Formateur</label>
+    <select name="formateur"  id="formateur" class="form-control" [(ngModel)]="module.formateur" >
+      <option [ngValue]="f" *ngFor="let f of formateurs">{{f.nom}}</option>
+    </select><br/>
+
+    <label for="datedebut">Date Debut </label>
+    <input type="date"  class="form-control"  [(ngModel)]="module.dateDebut"  name="datedebut"  id="datedebut" required> <br/>
+
+    <label for="datefin">Date Fin </label>
+    <input type="date"  class="form-control"  [(ngModel)]="module.dateFin"  name="datefin"  id="datefin" required > <br/>
+
+
+    <button  class="btn btn-success" type="submit" >Save</button>
+    <a  class="btn btn-info" [routerLink]="['/module']">Retour</a>
+
+  </form>
+</div>

@@ -14,20 +14,26 @@
         <th></th>
         <th></th>
       </tr>
-      <tr *ngFor="let p of planning; index as i">
+      <tr *ngFor="let p of planning">
         <td>{{p.idPlanning}}</td>
-        <td>{{p.datedebut}}</td>
-        <td>{{p.datefin}}</td>
-        <td>{{p.gestionnaire}}</td>
-        <td >{{p.modules}}</td>
-        <td>{{p.videoprojecteur}}</td>
+        <td>{{p.dateDebut}}</td>
+        <td>{{p.dateFin}}</td>
+        <td *ngIf="p.gestionnaire!=null">{{p.gestionnaire}}</td>
+        <td *ngIf="p.gestionnaire==null">Pas de Gestionnaire</td>
+        <td *ngIf="p.modules!=null">Liste de Module</td>
+        <td *ngIf="p.modules==null">Pas de modules</td>
+        <td *ngIf="p.videoProj!=null">{{p.videoProj}}</td>
+        <td *ngIf="p.videoProj==null">Pas de videoprojecteur</td>
         <td *ngIf="p.salle!=null">{{p.salle.nom}}</td>
         <td *ngIf="p.salle==null">Pas de salle</td>
-
+        <td><a [routerLink]="['/planning','edit', p.idPlanning]" class="btn btn-info">Modifier</a></td>
+        <td>
+          <button (click)="deletePlanning(p.idPlanning)" class="btn btn-danger">Supprimer</button>
+        </td>
       </tr>
     </table>
+    <a [routerLink]="['/planning','edit']" class="btn btn-success">Creer Nouveau Planning</a>
   </div>
 
-  <a [routerLink]="['/formateur','edit']" class="btn btn-success">Ajouter Nouveau Formateur</a>
 
 </div>

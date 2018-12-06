@@ -1,0 +1,47 @@
+<div class="container">
+  <form (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="id">Id :</label>
+      <input id="id" name="id" type="number" [(ngModel)]="ordinateur.id" class="form-control" readonly="readonly"
+             placeholder="Id généré automatiquement">
+    </div>
+    <div class="form-group">
+      <label for="code">Code :</label>
+      <input id="code" name="code" type="number" [(ngModel)]="ordinateur.code" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="cout">Cout d'Utilisation :</label>
+      <input id="cout" name="cout" type="number" [(ngModel)]="ordinateur.cout" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="disponibilite">Disponibilite :</label>
+      <input id="disponibilite" name="disponibilite" type="text" [(ngModel)]="ordinateur.disponibilite" required
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="processeur">Processeur :</label>
+      <input id="processeur" name="processeur" type="text" [(ngModel)]="ordinateur.processeur" required
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="disqueDur">Disque Dur :</label>
+      <input id="disqueDur" name="disqueDur" type="number" [(ngModel)]="ordinateur.disqueDur" required
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="ram">Ram :</label>
+      <input id="ram" name="ram" type="number" [(ngModel)]="ordinateur.ram" required
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="dateAchat">Date d'Achat :</label>
+      <input id="dateAchat" name="dateAchat" type="date" [(ngModel)]="ordinateur.dateAchat" required
+             class="form-control">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">Valider</button>
+      <button class="btn btn-warning" [routerLink]="['/materiel/ordinateur']">Annuler</button>
+    </div>
+  </form>
+</div>

@@ -10,7 +10,7 @@ import {Module} from '../model/module';
 })
 export class ModuleService {
 
-  private url = 'http://localhost:8080/formation/rest/formateur';
+  private url = 'http://localhost:8080/projet/rest/module';
   private header: HttpHeaders;
 
   constructor(private http: HttpClient) {
@@ -34,8 +34,8 @@ export class ModuleService {
 
   public create(module: Module) {
     const mod = {
-      datedebut: module.dateDebut,
-      datefin: module.dateFin,
+      dateDebut: module.dateDebut,
+      dateFin: module.dateFin,
       formateur: module.formateur,
       planning: module.planning,
       matiere: module.matiere
