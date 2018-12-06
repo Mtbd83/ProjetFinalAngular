@@ -1,0 +1,40 @@
+<div>
+  <div class="container">
+    <h2>Liste des Module : </h2>
+    <table class="table">
+      <tr>
+        <th>Id</th>
+        <th>Date Debut</th>
+        <th>Date Fin</th>
+        <th>Matiere</th>
+        <th>Formateur</th>
+        <th>Stagiaire</th>
+        <th>Planning</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let p of modules">
+        <td>{{p.idModule}}</td>
+        <td>{{p.dateDebut}}</td>
+        <td>{{p.dateFin}}</td>
+        <td *ngIf="p.matiere!=null">{{p.matiere}}</td>
+        <td *ngIf="p.matiere==null">Pas de matiere</td>
+        <td *ngIf="p.formateur!=null" >{{p.formateur}}</td>
+        <td *ngIf="p.formateur==null">Pas de formateur</td>
+<!--        <td *ngIf="p.stagiaires!=null">{{p.stagiaires}}</td>
+        <td *ngIf="p.stagiaires==null">Pas de stagiaire</td>-->
+        <td></td>
+        <td *ngIf="p.planning!=null">{{p.planning.idPlanning}}</td>
+        <td *ngIf="p.planning==null">Pas de planning</td>
+        <td><a [routerLink]="['/module','edit', p.idModule]" class="btn btn-info">Modifier</a></td>
+        <td>
+          <button (click)="deleteModule(p.idModule)" class="btn btn-danger">Supprimer</button>
+        </td>
+      </tr>
+    </table>
+    <a [routerLink]="['/module','edit']" class="btn btn-success">Creer Nouveau Module</a>
+  </div>
+
+
+
+</div>
