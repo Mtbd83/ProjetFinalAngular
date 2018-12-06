@@ -12,6 +12,8 @@ import {OrdinateurComponent} from './ordinateur/ordinateur.component';
 import {EditOrdinateurComponent} from './edit-ordinateur/edit-ordinateur.component';
 import {VideoprojecteurComponent} from './videoprojecteur/videoprojecteur.component';
 import {EditVideoprojecteurComponent} from './edit-videoprojecteur/edit-videoprojecteur.component';
+import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
+import {MatiereComponent} from './matiere/matiere.component';
 
 
 export const routes: Routes = [
@@ -24,9 +26,12 @@ export const routes: Routes = [
   {path: 'module', component: ModuleComponent},
   {path: 'module/edit', component: EditModuleComponent},
   {path: 'module/edit/:idModule', component: EditModuleComponent},
-  {path: 'planning', component: ModuleComponent},
+  {path: 'planning', component: PlanningComponent},
   {path: 'planning/edit', component: EditPlanningComponent},
   {path: 'planning/edit/:idModule', component:  EditPlanningComponent},
+  {path: 'matiere', component: MatiereComponent},
+  {path: 'matiere/edit', component: MatiereEditComponent},
+  {path: 'matiere/edit/:idMatiere', component:  MatiereEditComponent},
   {path: 'materiel/salle', component: SalleComponent},
   {path: 'materiel/salle/edit', component: EditSalleComponent},
   {path: 'materiel/salle/edit/:id', component: EditSalleComponent},

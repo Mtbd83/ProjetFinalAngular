@@ -64,6 +64,7 @@ export class MatiereService {
       prerequis: matiere.prerequis,
       contenu: matiere.contenu,
       module: matiere.module,
+
     };
     return this.http.post(this.url, m, {headers: this.header});
   }
