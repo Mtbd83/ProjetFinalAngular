@@ -4,7 +4,7 @@ import {Module} from './module';
 export class Matiere {
 
   constructor(private _idMatiere?: number, private _titre?: string, private _duree?: number, private _objectif?: string,
-              private _prerequis?: string, private _contenu?: string, private _module?: Module,
+              private _prerequis?: string, private _contenu?: string, private _module?: Array<Module>,
               private _formateursMatieres?: Array<FormateurMatiere>)  {
   }
 
@@ -56,11 +56,12 @@ export class Matiere {
     this._contenu = value;
   }
 
-  get module(): Module {
+
+  get module(): Array<Module> {
     return this._module;
   }
 
-  set module(value: Module) {
+  set module(value: Array<Module>) {
     this._module = value;
   }
 

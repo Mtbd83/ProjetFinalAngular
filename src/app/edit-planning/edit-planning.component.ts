@@ -3,6 +3,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {PlanningService} from '../service/planning.service';
 import {ModuleService} from '../service/module.service';
 import {Planning} from '../model/planning';
+import {Module} from '../model/module';
+import {Salle} from '../model/salle';
+import {Videoprojecteur} from '../model/videoprojecteur';
+import {SalleService} from '../service/salle.service';
 
 
 @Component({
@@ -12,18 +16,18 @@ import {Planning} from '../model/planning';
 })
 export class EditPlanningComponent implements OnInit {
 
-/*   private _modules: Array<Module>;
-   private salles: Array<Salle>;
-   private videoprojs: Array<Videoprojecteur>;*/
+   private _modules: Array<Module>;
+   private _salles: Array<Salle>;
+   private _videoprojs: Array<Videoprojecteur>;
    private _planning = new Planning();
 
   constructor(private _planningService: PlanningService, private _moduleService: ModuleService,
-              private activatedRoute: ActivatedRoute, private router: Router) {
+              private _activatedRoute: ActivatedRoute, private _router: Router, private _salleService: SalleService) {
   }
 
   ngOnInit() {
-    // this.listSalle();
-    this.activatedRoute.params.subscribe(params => {
+     this.listSalle();
+    this._activatedRoute.params.subscribe(params => {
       if (params.idPlanning) {
         this.planningService.findById(params.idPlanning).subscribe(result => {
           this._planning = result;
@@ -45,7 +49,7 @@ export class EditPlanningComponent implements OnInit {
 
 
   private backList() {
-    this.router.navigate(['/planning']);
+    this._router.navigate(['/planning']);
   }
 
   get planning(): Planning {
@@ -74,12 +78,59 @@ export class EditPlanningComponent implements OnInit {
   }
 
 
-  //
-  // public listSalle() {
-  //   this._salleService.list().subscribe(resultat => {
-  //     this._salles = resultat;
-  //   }, error => {
-  //     console.log(error);
-  //   });
-  // }
+  get modules(): Array<Module> {
+    return this._modules;
+  }
+
+  set modules(value: Array<Module>) {
+    this._modules = value;
+  }
+
+  get salles(): Array<Salle> {
+    return this._salles;
+  }
+
+  set salles(value: Array<Salle>) {
+    this._salles = value;
+  }
+
+  get videoprojs(): Array<Videoprojecteur> {
+    return this._videoprojs;
+  }
+
+  set videoprojs(value: Array<Videoprojecteur>) {
+    this._videoprojs = value;
+  }
+
+  get activatedRoute(): ActivatedRoute {
+    return this._activatedRoute;
+  }
+
+  set activatedRoute(value: ActivatedRoute) {
+    this._activatedRoute = value;
+  }
+
+  get router(): Router {
+    return this._router;
+  }
+
+  set router(value: Router) {
+    this._router = value;
+  }
+
+  get salleService(): SalleService {
+    return this._salleService;
+  }
+
+  set salleService(value: SalleService) {
+    this._salleService = value;
+  }
+
+  public listSalle() {
+    this._salleService.list().subscribe(resultat => {
+      this._salles = resultat;
+    }, error => {
+      console.log(error);
+    });
+  }
 }

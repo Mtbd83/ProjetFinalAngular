@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Matiere} from '../model/matiere';
 import {MatieremoduleService} from '../service/matieremodule.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Module} from '../model/module';
 
 @Component({
   selector: 'app-matieremodule',
@@ -10,7 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class MatieremoduleComponent implements OnInit {
 
-  private _listeMatieres: Array <Matiere>;
+  private _listeModule: Array <Module>;
   private _matiere = new Matiere();
 
   constructor(private _matiereModuleService: MatieremoduleService, private _activatedRoute: ActivatedRoute, private _router: Router) {
@@ -21,6 +22,9 @@ export class MatieremoduleComponent implements OnInit {
       if (params.idMatiere) {
         this._matiereModuleService.findById(params.idMatiere).subscribe(res => {
           this._matiere = res;
+           this.matiereModuleService.listModule(params.idMatiere).subscribe(resultat => {
+            this._listeModule = resultat;
+          });
         });
       }
     });
@@ -28,12 +32,12 @@ export class MatieremoduleComponent implements OnInit {
   }
 
 
-  get listeMatieres(): Array<Matiere> {
-    return this._listeMatieres;
+  get listeModule(): Array<Module> {
+    return this._listeModule;
   }
 
-  set listeMatieres(value: Array<Matiere>) {
-    this._listeMatieres = value;
+  set listeModule(value: Array<Module>) {
+    this._listeModule = value;
   }
 
   get matiere(): Matiere {
@@ -67,4 +71,6 @@ export class MatieremoduleComponent implements OnInit {
   set router(value: Router) {
     this._router = value;
   }
+
+
 }
