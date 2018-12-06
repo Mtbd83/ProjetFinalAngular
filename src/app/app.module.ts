@@ -27,6 +27,8 @@ import {VideoprojecteurService} from './service/videoprojecteur.service';
 import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
 import {MatiereComponent} from './matiere/matiere.component';
 import {MatiereService} from './service/matiere.service';
+import { MatieremoduleComponent } from './matieremodule/matieremodule.component';
+import {MatieremoduleService} from './service/matieremodule.service';
 
 
 @NgModule({
@@ -46,12 +48,13 @@ import {MatiereService} from './service/matiere.service';
     VideoprojecteurComponent,
     EditVideoprojecteurComponent,
     MatiereEditComponent,
-    MatiereComponent
+    MatiereComponent,
+    MatieremoduleComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule,
   ],
-  providers: [PlanningService, FormateurService, ModuleService, SalleService, OrdinateurService, VideoprojecteurService, MatiereService],
+  providers: [PlanningService, FormateurService, ModuleService, SalleService, OrdinateurService, VideoprojecteurService, MatiereService, MatieremoduleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
