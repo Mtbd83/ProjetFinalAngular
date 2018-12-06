@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table" style="...">
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Cout</th>
+      <th>Disponibilite</th>
+      <th>Processeur</th>
+      <th>Disque Dur</th>
+      <th>Ram</th>
+      <th>Date d'Achat</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let o of listOrdinateurs">
+      <td>{{o.id}}</td>
+      <td>{{o.code}}</td>
+      <td>{{o.cout}}</td>
+      <td>{{o.disponibilite}}</td>
+      <td>{{o.processeur}}</td>
+      <td>{{o.disqueDur}}</td>
+      <td>{{o.ram}}</td>
+      <td>{{o.dateAchat}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/materiel','ordinateur','edit',o.id]">Editer</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(o.id)">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <a [routerLink]="['/materiel','ordinateur','edit']" class="btn btn-dark">Ajouter un Ordinateur</a>
+</div>
