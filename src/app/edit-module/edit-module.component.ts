@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Module} from '../model/module';
 import {ModuleService} from '../service/module.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -42,8 +42,10 @@ export class EditModuleComponent implements OnInit {
 
   public save() {
     if (this._module.idModule) {
-      this.updateMatiere();
       this._moduleService.update(this._module).subscribe(result => {
+        if (this.module.matiere) {
+          this.updateMatiere();
+        }
         this.backList();
       });
     } else {
