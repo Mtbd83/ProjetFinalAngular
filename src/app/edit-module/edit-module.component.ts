@@ -20,7 +20,8 @@ export class EditModuleComponent implements OnInit {
   private _planning = new Planning();
   private _matieres: Array <Matiere>;
   private _formateurs: Array <Formateur>;
-  private _formateur = new Formateur();
+  private _formateur: Formateur;
+  private _matiere: Matiere;
 
   constructor(private _moduleService: ModuleService, private _planningService: PlanningService, private _matiereService: MatiereService,
               private _formateurService: FormateurService, private _activatedRoute: ActivatedRoute, private _router: Router) {
@@ -31,20 +32,17 @@ export class EditModuleComponent implements OnInit {
       if (params.idModule) {
         this._moduleService.findById(params.idModule).subscribe(result => {
           this._module = result;
-          if (this.module.formateur) {
-            this._formateur.nom = this.module.formateur.nom;
-          } else {
-            this._formateur.nom = ' ';
-          }
         });
       }
     });
-    // this.listMatiere();
+    this.listMatiere();
     this.listFormateur();
+  //  this.getFormateur();
   }
 
   public save() {
     if (this._module.idModule) {
+      this.updateMatiere();
       this._moduleService.update(this._module).subscribe(result => {
         this.backList();
       });
@@ -149,14 +147,22 @@ export class EditModuleComponent implements OnInit {
     this._formateurService = value;
   }
 
-//
-  // public listMatiere() {
-  //   this._matiereService.list().subscribe(resultat => {
-  //     this._matieres = resultat;
-  //   }, error => {
-  //     console.log(error);
-  //   });
-  // }
+
+  get matiere(): Matiere {
+    return this._matiere;
+  }
+
+  set matiere(value: Matiere) {
+    this._matiere = value;
+  }
+
+  public listMatiere() {
+    this._matiereService.list().subscribe(resultat => {
+      this._matieres = resultat;
+    }, error => {
+      console.log(error);
+    });
+  }
 
 
   public listFormateur() {
@@ -166,4 +172,36 @@ export class EditModuleComponent implements OnInit {
       console.log(error);
     });
   }
+
+  public updateMatiere() {
+    this.matiereService.findById(this._module.matiere.idMatiere).subscribe(getmatiere => {
+      this._matiere = getmatiere;
+      this._matiere.module = this._module;
+      console.log(this.matiere);
+      this._matiereService.update(this._matiere).subscribe(updated => {
+          console.log('updated');
+        }, error => {
+          console.log(' not updated');
+        }
+      );
+    });
+  }
+
+  //
+  // public getMatiere() {
+  //   this._matiereService.findById(this._module.matiere.idMatiere).subscribe(resultat => {
+  //     this._matiere = resultat;
+  //   }, error => {
+  //     console.log(error);
+  //   });
+  //   return this._matiere;
+  // }
+  //
+  // public getFormateur() {
+  //   this._formateurService.findById(this._module.formateur.id).subscribe(resultat => {
+  //     this._formateur = resultat;
+  //   }, error => {
+  //     console.log(error);
+  //   });
+  // }
 }
