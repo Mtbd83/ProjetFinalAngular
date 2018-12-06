@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Planning} from '../model/planning';
 import {Observable} from 'rxjs';
@@ -13,9 +13,9 @@ export class PlanningService {
 
   constructor(private http: HttpClient) {
     this.header = new HttpHeaders({
-    'Content-type': 'application/json',
-    'Authorization': 'Basic ' + btoa('toto:toto')
-  });
+      'Content-type': 'application/json',
+      'Authorization': 'Basic ' + btoa('toto:toto')
+    });
   }
 
   public list(): Observable<Planning[]> {

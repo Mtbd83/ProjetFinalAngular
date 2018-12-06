@@ -1,0 +1,26 @@
+<div class="container">
+  <table class="table" style="...">
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Cout</th>
+      <th>Disponibilite</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let vp of listVideoProj">
+      <td>{{vp.id}}</td>
+      <td>{{vp.code}}</td>
+      <td>{{vp.cout}}</td>
+      <td>{{vp.disponibilite}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/materiel','videoprojecteur','edit',vp.id]">Editer</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(vp.id)">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <a [routerLink]="['/materiel','videoprojecteur','edit']" class="btn btn-dark">Ajouter un VideoProjecteur</a>
+</div>

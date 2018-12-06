@@ -1,0 +1,27 @@
+<div class="container">
+  <form (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="id">Id :</label>
+      <input id="id" name="id" type="number" [(ngModel)]="videoProj.id" class="form-control" readonly="readonly">
+    </div>
+    <div class="form-group">
+      <label for="code">Code :</label>
+      <input id="code" name="code" type="number" [(ngModel)]="videoProj.code" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="cout">Cout d'Utilisation :</label>
+      <input id="cout" name="cout" type="number" [(ngModel)]="videoProj.cout" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="disponibilite">Disponibilite :</label>
+      <input id="disponibilite" name="disponibilite" type="text" [(ngModel)]="videoProj.disponibilite" required
+             class="form-control">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success" [routerLink]="['/materiel/videoprojecteur']">Valider</button>
+      <button class="btn btn-warning" [routerLink]="['/materiel/videoprojecteur']">Annuler</button>
+    </div>
+  </form>
+</div>
+
