@@ -20,5 +20,5 @@ export const routes: Routes = [
   {path: 'module/edit/:idModule', component: EditModuleComponent},
   {path: 'planning', component: ModuleComponent},
   {path: 'planning/edit', component: EditPlanningComponent},
-  {path: 'planning/edit/:idModule', component:  EditPlanningComponent}
+  {path: 'planning/edit/:idPlanning', component:  EditPlanningComponent}
 ];
