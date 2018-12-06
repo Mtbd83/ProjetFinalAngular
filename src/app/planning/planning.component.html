@@ -24,7 +24,7 @@
         <td *ngIf="p.modules==null">Pas de modules</td>
         <td *ngIf="p.videoProj!=null">{{p.videoProj}}</td>
         <td *ngIf="p.videoProj==null">Pas de videoprojecteur</td>
-        <td *ngIf="p.salle!=null">{{p.salle.nom}}</td>
+        <td *ngIf="p.salle!=null">{{p.salle.id}}</td>
         <td *ngIf="p.salle==null">Pas de salle</td>
         <td><a [routerLink]="['/planning','edit', p.idPlanning]" class="btn btn-info">Modifier</a></td>
         <td>

@@ -43,9 +43,9 @@ export class EditModuleComponent implements OnInit {
   public save() {
     if (this._module.idModule) {
       this._moduleService.update(this._module).subscribe(result => {
-        if (this.module.matiere) {
-          this.updateMatiere();
-        }
+        // if (this.module.matiere != null) {
+        //   this.updateMatiere();
+        // }
         this.backList();
       });
     } else {
@@ -178,8 +178,9 @@ export class EditModuleComponent implements OnInit {
   public updateMatiere() {
     this.matiereService.findById(this._module.matiere.idMatiere).subscribe(getmatiere => {
       this._matiere = getmatiere;
-      this._matiere.module = this._module;
-      console.log(this.matiere);
+      this._matiere.module.push(this._module);
+      console.log(this.matiere.module);
+
       this._matiereService.update(this._matiere).subscribe(updated => {
           console.log('updated');
         }, error => {
@@ -189,21 +190,5 @@ export class EditModuleComponent implements OnInit {
     });
   }
 
-  //
-  // public getMatiere() {
-  //   this._matiereService.findById(this._module.matiere.idMatiere).subscribe(resultat => {
-  //     this._matiere = resultat;
-  //   }, error => {
-  //     console.log(error);
-  //   });
-  //   return this._matiere;
-  // }
-  //
-  // public getFormateur() {
-  //   this._formateurService.findById(this._module.formateur.id).subscribe(resultat => {
-  //     this._formateur = resultat;
-  //   }, error => {
-  //     console.log(error);
-  //   });
-  // }
+
 }

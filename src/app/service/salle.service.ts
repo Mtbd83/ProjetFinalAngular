@@ -62,8 +62,8 @@ export class SalleService {
   public create(salle: Salle): Observable<any> {
     const s = {
       id: salle.id,
-      code: salle.code,
       cout: salle.cout,
+      code: salle.code,
       disponibilite: salle.disponibilite,
       capacite: salle.capacite
     };

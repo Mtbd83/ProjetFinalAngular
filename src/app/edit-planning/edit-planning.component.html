@@ -9,11 +9,10 @@
     <label for="datefin">Date Fin </label>
     <input type="date"  class="form-control"  [(ngModel)]="planning.dateFin"  name="datefin"  id="datefin" required> <br/>
 
-    <!--<label for="salles">Salles</label>-->
-    <!--<select name="salles"  id="salles" class="form-control" [(ngModel)]="planning.salle">-->
-      <!--<option [ngValue]="s" *ngFor="let s of salles">{{s.id}}</option>-->
-      <!--<option [ngValue]=null>Aucun Module</option>-->
-    <!--</select>-->
+    <label for="salles">Salles</label>
+    <select name="salles"  id="salles" class="form-control" [(ngModel)]="planning.salle">
+    <option [ngValue]="s" *ngFor="let s of salles">{{s.id}}</option>
+    </select>
 
     <button  class="btn btn-success" type="submit" >Save</button>
     <a  class="btn btn-info" [routerLink]="['/planning']">Retour</a>
