@@ -30,9 +30,9 @@ import {EditFormateurComponent} from './edit-formateur/edit-formateur.component'
     EditFormateurComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule
+    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule,
   ],
-  providers: [PlanningService, FormateurService, ModuleService],
+  providers: [PlanningService, FormateurService, ModuleService, MatiereService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
