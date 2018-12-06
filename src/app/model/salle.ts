@@ -1,7 +1,8 @@
 export class Salle {
 
 
-  constructor(private _id?: number, private _code?: number, private _cout?: number, private _disponibilite?: boolean, private _capacite?: number) {
+  constructor(private _id?: number, private _code?: number, private _cout?: number, private _disponibilite?: boolean,
+              private _capacite?: number) {
   }
 
   get id(): number {
