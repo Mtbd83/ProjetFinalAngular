@@ -9,17 +9,16 @@ import {SalleService} from '../service/salle.service';
 })
 export class SalleComponent implements OnInit {
 
-  private _listSalles = new Array<Salle>(new Salle(1, 159, 50, true, 20),
-    new Salle(2, 160, 45, false, 25));
+  private _listSalles = new Array<Salle>();
 
   constructor(private _salleService: SalleService) {
   }
 
   ngOnInit() {
-    this.liste();
+    this.list();
   }
 
-  public liste() {
+  public list() {
     this._salleService.list().subscribe(resultat => {
       this._listSalles = resultat;
     }, error => {
@@ -29,7 +28,7 @@ export class SalleComponent implements OnInit {
 
   delete(id) {
     this._salleService.delete(id).subscribe(resultat => {
-      this.liste();
+      this.list();
     });
   }
 

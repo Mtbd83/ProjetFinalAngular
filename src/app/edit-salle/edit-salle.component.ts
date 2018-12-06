@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Salle} from '../model/salle';
 import {SalleService} from '../service/salle.service';
-import {error} from 'util';
 
 @Component({
   selector: 'app-edit-salle',

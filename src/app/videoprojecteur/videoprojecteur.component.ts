@@ -15,10 +15,10 @@ export class VideoprojecteurComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.liste();
+    this.list();
   }
 
-  public liste() {
+  public list() {
     this._videoProjService.list().subscribe(resultat => {
       this._listVideoProj = resultat;
     }, error => {
@@ -28,7 +28,7 @@ export class VideoprojecteurComponent implements OnInit {
 
   delete(id) {
     this._videoProjService.delete(id).subscribe(resultat => {
-      this.liste();
+      this.list();
     });
   }
 
