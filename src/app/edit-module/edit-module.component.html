@@ -9,7 +9,20 @@
     <label for="datefin">Date Fin </label>
     <input type="date"  class="form-control"  [(ngModel)]="module.dateFin"  name="datefin"  id="datefin" required> <br/>
 
+
+    <label for="matiere">Matiere</label>
+    <select name="matiere"  id="matiere" class="form-control" [(ngModel)]="module.matiere">
+      <option [ngValue]="s" *ngFor="let s of matieres">{{s.nom}}</option>
+    </select><br/>
+
+    <label for="formateur">Formateur</label>
+    <select name="formateur"  id="formateur" class="form-control" [(ngModel)]="module.formateurs" value="{{formateur.nom}}">
+      <option [ngValue]="s" *ngFor="let s of formateurs">{{s.nom}}</option>
+    </select><br/>
+
+
     <button  class="btn btn-success" type="submit" >Save</button>
     <a  class="btn btn-info" [routerLink]="['/module']">Retour</a>
+
   </form>
 </div>
