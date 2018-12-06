@@ -15,6 +15,7 @@ import {EditVideoprojecteurComponent} from './edit-videoprojecteur/edit-videopro
 import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
 import {MatiereComponent} from './matiere/matiere.component';
 import {MatieremoduleComponent} from './matieremodule/matieremodule.component';
+import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.component';
 
 
 export const routes: Routes = [
@@ -42,5 +43,6 @@ export const routes: Routes = [
   {path: 'materiel/ordinateur/edit/:id', component: EditOrdinateurComponent},
   {path: 'materiel/videoprojecteur', component: VideoprojecteurComponent},
   {path: 'materiel/videoprojecteur/edit', component: EditVideoprojecteurComponent},
-  {path: 'materiel/videoprojecteur/edit/:id', component: EditVideoprojecteurComponent}
+  {path: 'materiel/videoprojecteur/edit/:id', component: EditVideoprojecteurComponent},
+  {path: 'formateur/listeMatieres/:id', component: MatiereFormateurComponent}
 ];
