@@ -44,6 +44,9 @@ import {VideoprojecteurComponent} from './videoprojecteur/videoprojecteur.compon
 import {EditVideoprojecteurComponent} from './edit-videoprojecteur/edit-videoprojecteur.component';
 =======
 import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.component';
+import {SalleService} from './service/salle.service';
+import {OrdinateurService} from './service/ordinateur.service';
+import {VideoprojecteurService} from './service/videoprojecteur.service';
 
 >>>>>>> Stashed changes
 
@@ -71,6 +74,7 @@ import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.c
     MatiereComponent,
 <<<<<<< Updated upstream
     MatieremoduleComponent
+    MatieremoduleComponent,
     EditVideoprojecteurComponent
 =======
     MatieremoduleComponent,
@@ -87,6 +91,8 @@ import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.c
   providers: [PlanningService, FormateurService, ModuleService, SalleService, OrdinateurService, VideoprojecteurService,
     MatiereService, MatieremoduleService],
 >>>>>>> Stashed changes
+  providers: [PlanningService, FormateurService, ModuleService, SalleService, OrdinateurService, VideoprojecteurService, MatiereService,
+    MatieremoduleService, FormateurMatiereService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
