@@ -9,7 +9,11 @@ import {SalleService} from '../service/salle.service';
 })
 export class SalleComponent implements OnInit {
 
+<<<<<<< Updated upstream
   private _listSalles = new Array<Salle>();
+=======
+  private _listSalles: Array <Salle>;
+>>>>>>> Stashed changes
 
   constructor(private _salleService: SalleService) {
   }

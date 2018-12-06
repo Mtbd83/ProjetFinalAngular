@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Matiere} from '../model/matiere';
+import {Module} from '../model/module';
 
 @Injectable({
   providedIn: 'root'
@@ -42,8 +43,8 @@ export class MatieremoduleService {
     this._http = value;
   }
 
-  public listModule(idMatiere): Observable<Matiere> {
-    return this.http.get<Matiere>(`${this.url}/${idMatiere}`, {headers: this.header});
+  public listModule(idMatiere): Observable<Module[]> {
+    return this.http.get<Module[]>(`${this.url}/${idMatiere}`, {headers: this.header});
   }
   public findById(idMatiere: number): Observable<Matiere> {
     return this.http.get<Matiere>(`${this.url}/${idMatiere}`, {headers: this.header});

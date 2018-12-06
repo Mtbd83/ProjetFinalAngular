@@ -25,6 +25,7 @@ export const routes: Routes = [
   {path: 'formateur', component: FormateurComponent},
   {path: 'formateur/edit', component: EditFormateurComponent},
   {path: 'formateur/edit/:id', component: EditFormateurComponent},
+  {path: 'formateur/listeMatieres/:id', component: MatiereFormateurComponent},
   {path: 'module', component: ModuleComponent},
   {path: 'module/edit', component: EditModuleComponent},
   {path: 'module/edit/:idModule', component: EditModuleComponent},
