@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table" style="text-align: center">
+    <tr>
+      <th> Id Matiere </th>
+      <th> Titre </th>
+      <th> Duree </th>
+      <th> Objectif </th>
+      <th> Prerequis </th>
+      <th> Contenu </th>
+    </tr>
+    <tr *ngFor="let matiere of listeMatieres;index as i">
+      <td>{{ matiere.idMatiere }}</td>
+      <td>{{ matiere.titre }}</td>
+      <td>{{ matiere.duree }}</td>
+      <td>{{ matiere.objectif }}</td>
+      <td>{{ matiere.prerequis }}</td>
+      <td>{{ matiere.contenu }}</td>
+    </tr>
+  </table>
+  <br/>
+  <a [routerLink]="['/formateur']" class="btn btn-warning">Retour</a>
+</div>
