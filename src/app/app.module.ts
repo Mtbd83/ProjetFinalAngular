@@ -16,6 +16,9 @@ import {routes} from './routes';
 import { ModuleComponent } from './module/module.component';
 import { EditModuleComponent } from './edit-module/edit-module.component';
 import {EditFormateurComponent} from './edit-formateur/edit-formateur.component';
+import {MatiereService} from './service/matiere.service';
+import {MatiereComponent} from './matiere/matiere.component';
+import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import {EditFormateurComponent} from './edit-formateur/edit-formateur.component'
     EditPlanningComponent,
     ModuleComponent,
     EditModuleComponent,
-    EditFormateurComponent
+    EditFormateurComponent,
+    MatiereComponent,
+    MatiereEditComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule,
