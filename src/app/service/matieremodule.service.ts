@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Matiere} from '../model/matiere';
-
+import {Module} from '../model/module';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MatiereService {
+export class MatieremoduleService {
 
-  private _url = 'http://localhost:8080/projet/rest/matiere';
+  private _url = 'http://localhost:8080/projet/rest/matiere/module';
   private _header: HttpHeaders;
 
   constructor(private _http: HttpClient) {
@@ -43,29 +43,12 @@ export class MatiereService {
     this._http = value;
   }
 
-  public list(): Observable<Matiere[]> {
-    return this.http.get<Matiere[]>(this.url, {headers: this.header});
-  }
-
-  public delete(idMatiere: number): Observable<any> {
-    return this.http.delete(`${this.url}/${idMatiere}`, {headers: this.header});
+  public listModule(idMatiere): Observable<Module[]> {
+    return this.http.get<Module[]>(`${this.url}/${idMatiere}`, {headers: this.header});
   }
   public findById(idMatiere: number): Observable<Matiere> {
     return this.http.get<Matiere>(`${this.url}/${idMatiere}`, {headers: this.header});
   }
-  public update(matiere: Matiere): Observable<Matiere> {
-    return this.http.put<Matiere>( this.url, matiere, {headers: this.header});
-  }
-  public create(matiere: Matiere): Observable<any> {
-    const m = {
-      titre: matiere.titre,
-      duree: matiere.duree,
-      objectif: matiere.objectif,
-      prerequis: matiere.prerequis,
-      contenu: matiere.contenu,
-      module: matiere.module,
 
-    };
-    return this.http.post(this.url, m, {headers: this.header});
-  }
+
 }

@@ -1,5 +1,6 @@
 export class Ordinateur {
-  constructor(private _id?: number, private _code?: number, private _cout?: number, private _disponibilite?: boolean, private _processeur?: string, private _ram?: number, private _disqueDur?: number, private _dateAchat?: Date) {
+  constructor(private _id?: number, private _code?: number, private _cout?: number, private _disponibilite?: boolean,
+              private _processeur?: string, private _ram?: number, private _disqueDur?: number, private _dateAchat?: Date) {
   }
 
 
