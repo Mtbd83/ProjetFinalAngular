@@ -62,7 +62,8 @@ export class MatiereService {
       duree: matiere.duree,
       objectif: matiere.objectif,
       prerequis: matiere.prerequis,
-      contenu: matiere.contenu
+      contenu: matiere.contenu,
+      module: matiere.module,
     };
     return this.http.post(this.url, m, {headers: this.header});
   }
