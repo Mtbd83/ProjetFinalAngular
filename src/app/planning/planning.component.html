@@ -20,8 +20,7 @@
         <td>{{p.dateFin}}</td>
         <td *ngIf="p.gestionnaire!=null">{{p.gestionnaire}}</td>
         <td *ngIf="p.gestionnaire==null">Pas de Gestionnaire</td>
-        <td *ngIf="p.modules!=null">Liste de Module</td>
-        <td *ngIf="p.modules==null">Pas de modules</td>
+        <td><a [routerLink]="['/planning','module', p.idPlanning]" class="btn btn-info">Voir Modules</a></td>
         <td *ngIf="p.videoProj!=null">{{p.videoProj}}</td>
         <td *ngIf="p.videoProj==null">Pas de videoprojecteur</td>
         <td *ngIf="p.salle!=null">{{p.salle.id}}</td>
