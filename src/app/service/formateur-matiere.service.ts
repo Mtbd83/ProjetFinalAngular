@@ -4,13 +4,14 @@ import {Observable} from 'rxjs';
 import {Matiere} from '../model/matiere';
 import {FormateurMatiere} from '../model/formateur-matiere';
 import {FormateurMatiereKey} from '../model/formateur-matiere-key';
+import {Formateur} from '../model/formateur';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormateurMatiereService {
 
-  private _url = 'http://localhost:8080/projet/rest/formateurmatiere';
+  private _url = 'http://localhost:8080/projet/rest/formateur/matiere';
   private _header: HttpHeaders;
 
   constructor(private _http: HttpClient) {
@@ -44,19 +45,19 @@ export class FormateurMatiereService {
     this._http = value;
   }
 
-  public list(): Observable<FormateurMatiere[]> {
-    return this.http.get<FormateurMatiere[]>(this.url, {headers: this.header});
+  public list(id): Observable<Matiere[]> {
+    return this.http.get<Matiere[]>(`${this.url}/${id}`, {headers: this.header});
   }
 
-  public delete(key: FormateurMatiereKey): Observable<any> {
-    return this.http.delete(`${this.url}/${key}`, {headers: this.header});
+  public delete(id, idMatiere): Observable<any> {
+    return this.http.delete(`${this.url}/${id}/${idMatiere}`, {headers: this.header});
   }
-
-  public findById(key: FormateurMatiereKey): Observable<Matiere> {
-    return this.http.get<Matiere>(`${this.url}/${key}`, {headers: this.header});
-  }
-
-  public create(formateurMatiere: FormateurMatiere): Observable<any> {
-    return this.http.post(this.url, formateurMatiere, {headers: this.header});
-  }
+  //
+  // public findById(key: FormateurMatiereKey): Observable<Matiere> {
+  //   return this.http.get<Matiere>(`${this.url}/${key}`, {headers: this.header});
+  // }
+  //
+  // public create(formateurMatiere: FormateurMatiere): Observable<any> {
+  //   return this.http.post(this.url, formateurMatiere, {headers: this.header});
+  // }
 }
