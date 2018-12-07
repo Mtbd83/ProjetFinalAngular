@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Formateur} from '../model/formateur';
 import {Ordinateur} from '../model/ordinateur';
 
 @Injectable({

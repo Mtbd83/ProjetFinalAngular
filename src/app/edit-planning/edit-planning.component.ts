@@ -7,6 +7,7 @@ import {Module} from '../model/module';
 import {Salle} from '../model/salle';
 import {Videoprojecteur} from '../model/videoprojecteur';
 import {SalleService} from '../service/salle.service';
+import {VideoprojecteurService} from '../service/videoprojecteur.service';
 
 
 @Component({
@@ -22,11 +23,13 @@ export class EditPlanningComponent implements OnInit {
    private _planning = new Planning();
 
   constructor(private _planningService: PlanningService, private _moduleService: ModuleService,
-              private _activatedRoute: ActivatedRoute, private _router: Router, private _salleService: SalleService) {
+              private _activatedRoute: ActivatedRoute, private _router: Router, private _salleService: SalleService,
+              private videoService: VideoprojecteurService) {
   }
 
   ngOnInit() {
      this.listSalle();
+     this.listVideo();
     this._activatedRoute.params.subscribe(params => {
       if (params.idPlanning) {
         this.planningService.findById(params.idPlanning).subscribe(result => {
@@ -129,6 +132,14 @@ export class EditPlanningComponent implements OnInit {
   public listSalle() {
     this._salleService.list().subscribe(resultat => {
       this._salles = resultat;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  public listVideo() {
+    this.videoService.list().subscribe(resultat => {
+      this.videoprojs = resultat;
     }, error => {
       console.log(error);
     });
