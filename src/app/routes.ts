@@ -25,7 +25,7 @@ export const routes: Routes = [
   {path: 'formateur', component: FormateurComponent},
   {path: 'formateur/edit', component: EditFormateurComponent},
   {path: 'formateur/edit/:id', component: EditFormateurComponent},
-  {path: 'formateur/listeMatieres/:id', component: MatiereFormateurComponent},
+  {path: 'formateur/matiere/:id', component: MatiereFormateurComponent},
   {path: 'module', component: ModuleComponent},
   {path: 'module/edit', component: EditModuleComponent},
   {path: 'module/edit/:idModule', component: EditModuleComponent},
@@ -45,5 +45,4 @@ export const routes: Routes = [
   {path: 'materiel/videoprojecteur', component: VideoprojecteurComponent},
   {path: 'materiel/videoprojecteur/edit', component: EditVideoprojecteurComponent},
   {path: 'materiel/videoprojecteur/edit/:id', component: EditVideoprojecteurComponent},
-  {path: 'formateur/listeMatieres/:id', component: MatiereFormateurComponent}
 ];

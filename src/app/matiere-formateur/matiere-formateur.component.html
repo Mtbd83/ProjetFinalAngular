@@ -7,6 +7,7 @@
       <th> Objectif </th>
       <th> Prerequis </th>
       <th> Contenu </th>
+      <th></th>
     </tr>
     <tr *ngFor="let matiere of listeMatieres;index as i">
       <td>{{ matiere.idMatiere }}</td>
@@ -15,6 +16,7 @@
       <td>{{ matiere.objectif }}</td>
       <td>{{ matiere.prerequis }}</td>
       <td>{{ matiere.contenu }}</td>
+      <td><button class="btn btn-danger" (click)="supp(matiere.idMatiere)">Supprimer</button></td>
     </tr>
   </table>
   <br/>

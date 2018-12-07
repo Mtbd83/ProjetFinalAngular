@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormateurMatiere} from '../model/formateur-matiere';
 import {FormateurMatiereService} from '../service/formateur-matiere.service';
 import {MatiereService} from '../service/matiere.service';
@@ -32,8 +32,9 @@ export class MatiereFormateurComponent implements OnInit {
       if (params.id) {
         this.formateurService.findById(params.id).subscribe(resultat => {
           this.formateur = resultat;
-          this.list();
+         // this.list();
           this.listMatiere();
+          console.log(this.listeMatieres);
         });
       }
     });
@@ -111,29 +112,31 @@ export class MatiereFormateurComponent implements OnInit {
     this._formateurMatiereService = value;
   }
 
-  public list() {
-    this.formateurMatiereService.list().subscribe(resultat => {
+/*  public list() {
+    this.formateurMatiereService.list(this.formateur.id).subscribe(resultat => {
       this.listeFM = resultat;
     }, error => {
       console.log(error);
     });
-  }
+  }*/
 
   public listMatiere() {
-    this.matiereService.list().subscribe(resultat => {
-      if ( this.formateur.formateurmatiere !== null) {
-        for ( this.i = 0; this.i < this.formateur.formateurmatiere.length; this.i ++) {
-          this.listeMatieres.push(this.formateur.formateurmatiere[this.i].key.matiere);
-        }
-      }
+    this.formateurMatiereService.list(this.formateur.id).subscribe(resultat => {
+      this.listeMatieres = resultat;
     }, error => {
       console.log(error);
     });
   }
 
-  delete(fm: FormateurMatiere) {
+/*  delete(fm: FormateurMatiere) {
     this.formateurMatiereService.delete(fm.key).subscribe(resultat => {
       this.list();
+    });
+  }*/
+
+  supp(idMatiere) {
+    this.formateurMatiereService.delete(this.formateur.id, idMatiere).subscribe(resultat => {
+      this.listMatiere();
     });
   }
 }
