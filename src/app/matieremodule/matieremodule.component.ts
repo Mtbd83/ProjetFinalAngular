@@ -23,7 +23,7 @@ export class MatieremoduleComponent implements OnInit {
         this._matiereModuleService.findById(params.idMatiere).subscribe(res => {
           this._matiere = res;
            this.matiereModuleService.listModule(params.idMatiere).subscribe(resultat => {
-            this._listeModule = resultat;
+            this._listeModule = resultat.module;
           });
         });
       }
