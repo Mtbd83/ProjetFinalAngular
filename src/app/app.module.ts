@@ -30,6 +30,9 @@ import {MatiereService} from './service/matiere.service';
 import {MatieremoduleComponent} from './matieremodule/matieremodule.component';
 import {MatieremoduleService} from './service/matieremodule.service';
 import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.component';
+import {SalleService} from './service/salle.service';
+import {OrdinateurService} from './service/ordinateur.service';
+import {VideoprojecteurService} from './service/videoprojecteur.service';
 import { PlanningmoduleComponent } from './planningmodule/planningmodule.component';
 import {PlanningmoduleService} from './service/planningmodule.service';
 

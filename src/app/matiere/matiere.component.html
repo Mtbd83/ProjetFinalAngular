@@ -8,7 +8,7 @@
     <th> Objectif </th>
     <th> Prerequis </th>
     <th> Contenu </th>
-      <th> Module </th>
+     <!-- <th> Module </th> -->
       <th></th>
     <th></th>
     </tr>
@@ -21,7 +21,7 @@
       <td>{{ m.contenu }}</td>
       <!--<td *ngIf="m.module!=null">{{ m.module.idModule }}</td>-->
       <!--<td *ngIf="m.module==null">Aucun Module</td>-->
-      <td><button class="btn btn-info" [routerLink]="['/matiere','module',m.idMatiere]">Voir Modules</button></td>
+     <!-- <td><button class="btn btn-info" [routerLink]="['/matiere','module',m.idMatiere]">Voir Modules</button></td> -->
       <td><button class="btn btn-primary" [routerLink]="['/matiere','edit',m.idMatiere]">Editer</button></td>
       <td><button class="btn btn-danger" (click)="delete(m.idMatiere)">Supprimer</button></td>
     </tr>
