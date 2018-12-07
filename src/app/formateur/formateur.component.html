@@ -22,7 +22,7 @@
       <td *ngIf="f.adresse">{{ f.adresse.numero }} {{ f.adresse.rue }} {{ f.adresse.codePostal }} {{ f.adresse.ville }}</td>
       <td *ngIf="!f.adresse"></td>
       <td><button class="btn btn-primary" [routerLink]="['/formateur','edit',f.id]">Editer</button></td>
-      <td><button class="btn btn-success" [routerLink]="['/formateur','listeMatieres',f.id]">Matieres</button></td>
+      <td><button class="btn btn-success" [routerLink]="['/formateur','matiere',f.id]">Matieres</button></td>
       <td><button class="btn btn-danger" (click)="supp(f.id)">Supprimer</button></td>
     </tr>
   </table>
