@@ -1,27 +1,25 @@
 <div>
   <div class="container">
-    <h2>Liste des Module contenant la matière {{matiere.titre}}: </h2>
+    <h2>Liste des Modules dans le Planning : </h2>
     <table class="table">
       <tr>
-        <th>Id</th>
         <th>Date Debut</th>
         <th>Date Fin</th>
+        <th>Matiere</th>
         <th>Formateur</th>
         <!--<th>Stagiaire</th>-->
-        <th>Planning</th>
         <th></th>
         <th></th>
       </tr>
       <tr *ngFor="let p of listeModule">
-        <td>{{p.idModule}}</td>
         <td>{{p.dateDebut}}</td>
         <td>{{p.dateFin}}</td>
+        <td *ngIf="p.matiere!=null">{{p.matiere.titre}}</td>
+        <td *ngIf="p.matiere==null">Pas de matiere</td>
         <td *ngIf="p.formateur!=null" >{{p.formateur.nom}}</td>
         <td *ngIf="p.formateur==null">Pas de formateur</td>
         <!--        <td *ngIf="p.stagiaires!=null">{{p.stagiaires}}</td>
                 <td *ngIf="p.stagiaires==null">Pas de stagiaire</td>-->
-        <td *ngIf="p.planning!=null">{{p.planning.idPlanning}}</td>
-        <td *ngIf="p.planning==null">Pas de planning</td>
         <!--<td><a [routerLink]="['/module','edit', p.idModule]" class="btn btn-info">Modifier</a></td>-->
         <!--<td>-->
           <!--<button (click)="deleteModule(p.idModule)" class="btn btn-danger">Supprimer</button>-->
