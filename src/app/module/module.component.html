@@ -9,7 +9,7 @@
         <th>Matiere</th>
         <th>Formateur</th>
         <!--<th>Stagiaire</th>-->
-        <th>Planning</th>
+        <!--<th>Planning</th>-->
         <th></th>
         <th></th>
       </tr>
@@ -23,8 +23,8 @@
         <td *ngIf="p.formateur==null">Pas de formateur</td>
 <!--        <td *ngIf="p.stagiaires!=null">{{p.stagiaires}}</td>
         <td *ngIf="p.stagiaires==null">Pas de stagiaire</td>-->
-        <td *ngIf="p.planning!=null">{{p.planning.idPlanning}}</td>
-        <td *ngIf="p.planning==null">Pas de planning</td>
+        <!-- <td *ngIf="p.planning!=null">{{p.planning.idPlanning}}</td>
+        <td *ngIf="p.planning==null">Pas de planning</td> -->
         <td><a [routerLink]="['/module','edit', p.idModule]" class="btn btn-info">Modifier</a></td>
         <td>
           <button (click)="deleteModule(p.idModule)" class="btn btn-danger">Supprimer</button>
