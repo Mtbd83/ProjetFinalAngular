@@ -25,6 +25,11 @@
     <input type="date"  class="form-control"  [(ngModel)]="module.dateFin"  name="datefin"  id="datefin" required > <br/>
 
 
+    <label for="planning">Planning</label>
+    <select name="planning"  id="planning" class="form-control" [(ngModel)]="module.planning" >
+      <option [ngValue]="p" *ngFor="let p of planning">{{p.idPlanning}}</option>
+    </select><br/>
+
     <button  class="btn btn-success" type="submit" >Save</button>
     <a  class="btn btn-info" [routerLink]="['/module']">Retour</a>
 

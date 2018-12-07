@@ -17,7 +17,7 @@ import {FormateurService} from '../service/formateur.service';
 export class EditModuleComponent implements OnInit {
 
   private _module = new Module();
-  private _planning = new Planning();
+  private _planning = new Array<Planning>();
   private _matieres: Array <Matiere>;
   private _formateurs: Array <Formateur>;
   private _formateur: Formateur;
@@ -37,15 +37,13 @@ export class EditModuleComponent implements OnInit {
     });
     this.listMatiere();
     this.listFormateur();
+    this.listPlanning();
   //  this.getFormateur();
   }
 
   public save() {
     if (this._module.idModule) {
       this._moduleService.update(this._module).subscribe(result => {
-        // if (this.module.matiere != null) {
-        //   this.updateMatiere();
-        // }
         this.backList();
       });
     } else {
@@ -67,11 +65,12 @@ export class EditModuleComponent implements OnInit {
     this._formateur = value;
   }
 
-  get planning(): Planning {
+
+  get planning(): Planning[] {
     return this._planning;
   }
 
-  set planning(value: Planning) {
+  set planning(value: Planning[]) {
     this._planning = value;
   }
 
@@ -175,20 +174,14 @@ export class EditModuleComponent implements OnInit {
     });
   }
 
-  public updateMatiere() {
-    this.matiereService.findById(this._module.matiere.idMatiere).subscribe(getmatiere => {
-      this._matiere = getmatiere;
-      this._matiere.module.push(this._module);
-      console.log(this.matiere.module);
-
-      this._matiereService.update(this._matiere).subscribe(updated => {
-          console.log('updated');
-        }, error => {
-          console.log(' not updated');
-        }
-      );
+  public listPlanning() {
+    this._planningService.list().subscribe(resultat => {
+      this.planning = resultat;
+    }, error => {
+      console.log(error);
     });
   }
+
 
 
 }

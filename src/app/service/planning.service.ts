@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Planning} from '../model/planning';
 import {Observable} from 'rxjs';
+import {Module} from '../model/module';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,9 @@ export class PlanningService {
     return this.http.get<Planning[]>(this.url, {headers: this.header});
   }
 
+  public listModule(idPlanning): Observable<Module[]> {
+    return this.http.get<Module[]>(this.url + '/module/' + idPlanning, {headers: this.header});
+  }
   public delete(id: number): Observable<any> {
     return this.http.delete(this.url + '/' + id, {headers: this.header});
   }
@@ -33,11 +37,11 @@ export class PlanningService {
   public create(planning: Planning) {
     const plan = {
       dateDebut: planning.dateDebut,
-      datefin: planning.dateFin,
+      dateFin: planning.dateFin,
       salle: planning.salle,
       modules: planning.modules,
       gestionnaire: planning.gestionnaire,
-      videoprojecteur: planning.videoProj
+      videoProj: planning.videoProj
     };
     return this.http.post<Planning>(this.url, plan, {headers: this.header});
   }
