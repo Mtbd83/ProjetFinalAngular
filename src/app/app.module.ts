@@ -35,6 +35,8 @@ import { UserComponent } from './user/user.component';
 import {UserService} from './service/user.service';
 import {ApiService} from './service/api.service';
 import {Authguard} from './model/authguard';
+import { PlanningmoduleComponent } from './planningmodule/planningmodule.component';
+import {PlanningmoduleService} from './service/planningmodule.service';
 
 
 @NgModule({
