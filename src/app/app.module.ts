@@ -35,8 +35,13 @@ import { UserComponent } from './user/user.component';
 import {UserService} from './service/user.service';
 import {ApiService} from './service/api.service';
 import {Authguard} from './model/authguard';
+import { UserComponent } from './user/user.component';
+import {UserService} from './service/user.service';
+import {ApiService} from './service/api.service';
+import {Authguard} from './model/authguard';
 import { PlanningmoduleComponent } from './planningmodule/planningmodule.component';
 import {PlanningmoduleService} from './service/planningmodule.service';
+import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.component';
 
 
 @NgModule({
@@ -58,13 +63,14 @@ import {PlanningmoduleService} from './service/planningmodule.service';
     MatiereEditComponent,
     MatiereComponent,
     MatieremoduleComponent,
-    UserComponent,
+    MatiereFormateurComponent,
+    PlanningmoduleComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule
   ],
   providers: [PlanningService, FormateurService, ModuleService, SalleService, OrdinateurService, VideoprojecteurService,
-    MatiereService, MatieremoduleService, AuthService, UserService, ApiService, Authguard],
+    MatiereService, MatieremoduleService, PlanningmoduleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
