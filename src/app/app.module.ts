@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {PlanningComponent} from './planning/planning.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './home/home.component';
 import {PlanningService} from './service/planning.service';
@@ -30,9 +30,11 @@ import {MatiereService} from './service/matiere.service';
 import {MatieremoduleComponent} from './matieremodule/matieremodule.component';
 import {MatieremoduleService} from './service/matieremodule.service';
 import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.component';
-import {SalleService} from './service/salle.service';
-import {OrdinateurService} from './service/ordinateur.service';
-import {VideoprojecteurService} from './service/videoprojecteur.service';
+import {AuthService} from './service/auth.service';
+import { UserComponent } from './user/user.component';
+import {UserService} from './service/user.service';
+import {ApiService} from './service/api.service';
+import {Authguard} from './model/authguard';
 import { PlanningmoduleComponent } from './planningmodule/planningmodule.component';
 import {PlanningmoduleService} from './service/planningmodule.service';
 
@@ -56,14 +58,13 @@ import {PlanningmoduleService} from './service/planningmodule.service';
     MatiereEditComponent,
     MatiereComponent,
     MatieremoduleComponent,
-    MatiereFormateurComponent,
-    PlanningmoduleComponent
+    UserComponent,
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule,
+    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule
   ],
   providers: [PlanningService, FormateurService, ModuleService, SalleService, OrdinateurService, VideoprojecteurService,
-    MatiereService, MatieremoduleService, PlanningmoduleService],
+    MatiereService, MatieremoduleService, AuthService, UserService, ApiService, Authguard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

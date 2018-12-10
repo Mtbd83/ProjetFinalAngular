@@ -1,7 +1,7 @@
 import {FormateurMatiere} from './formateur-matiere';
 import {Adresse} from './adresse';
 import {Module} from './module';
-import {Login} from './login';
+import {Login} from './user';
 
 export class Formateur {
 

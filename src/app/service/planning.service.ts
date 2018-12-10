@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Planning} from '../model/planning';
 import {Observable} from 'rxjs';
 import {Module} from '../model/module';
+import {User} from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class PlanningService {
 
   private url = 'http://localhost:8080/projet/rest/planning';
   private header: HttpHeaders;
+  private user: User;
 
   constructor(private http: HttpClient) {
     this.header = new HttpHeaders({
