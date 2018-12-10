@@ -16,34 +16,38 @@ import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
 import {MatiereComponent} from './matiere/matiere.component';
 import {MatieremoduleComponent} from './matieremodule/matieremodule.component';
 import {MatiereFormateurComponent} from './matiere-formateur/matiere-formateur.component';
+import {UserComponent} from './user/user.component';
+import {UserService} from './service/user.service';
+import {Authguard} from './model/authguard';
 
 
 export const routes: Routes = [
   {path: 'planning', component: PlanningComponent},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, canActivate: [Authguard]},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'formateur', component: FormateurComponent},
+  {path: 'formateur', component: FormateurComponent, canActivate: [Authguard]},
   {path: 'formateur/edit', component: EditFormateurComponent},
   {path: 'formateur/edit/:id', component: EditFormateurComponent},
   {path: 'formateur/listeMatieres/:id', component: MatiereFormateurComponent},
-  {path: 'module', component: ModuleComponent},
+  {path: 'module', component: ModuleComponent, canActivate: [Authguard]},
   {path: 'module/edit', component: EditModuleComponent},
   {path: 'module/edit/:idModule', component: EditModuleComponent},
-  {path: 'planning', component: PlanningComponent},
+  {path: 'planning', component: PlanningComponent, canActivate: [Authguard]},
   {path: 'planning/edit', component: EditPlanningComponent},
   {path: 'planning/edit/:idPlanning', component:  EditPlanningComponent},
-  {path: 'matiere', component: MatiereComponent},
+  {path: 'matiere', component: MatiereComponent, canActivate: [Authguard]},
   {path: 'matiere/edit', component: MatiereEditComponent},
   {path: 'matiere/edit/:idMatiere', component:  MatiereEditComponent},
   {path: 'matiere/module/:idMatiere', component:  MatieremoduleComponent},
-  {path: 'materiel/salle', component: SalleComponent},
+  {path: 'materiel/salle', component: SalleComponent, canActivate: [Authguard]},
   {path: 'materiel/salle/edit', component: EditSalleComponent},
   {path: 'materiel/salle/edit/:id', component: EditSalleComponent},
-  {path: 'materiel/ordinateur', component: OrdinateurComponent},
+  {path: 'materiel/ordinateur', component: OrdinateurComponent, canActivate: [Authguard]},
   {path: 'materiel/ordinateur/edit', component: EditOrdinateurComponent},
   {path: 'materiel/ordinateur/edit/:id', component: EditOrdinateurComponent},
-  {path: 'materiel/videoprojecteur', component: VideoprojecteurComponent},
+  {path: 'materiel/videoprojecteur', component: VideoprojecteurComponent, canActivate: [Authguard]},
   {path: 'materiel/videoprojecteur/edit', component: EditVideoprojecteurComponent},
   {path: 'materiel/videoprojecteur/edit/:id', component: EditVideoprojecteurComponent},
-  {path: 'formateur/listeMatieres/:id', component: MatiereFormateurComponent}
+  {path: 'formateur/listeMatieres/:id', component: MatiereFormateurComponent},
+  {path: 'user', component: UserComponent}
 ];
